@@ -1,24 +1,19 @@
-# README
+# Event Lyon
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Pair programmers : Carolina & François  
 
-Things you may want to cover:
+**Production version** [https://event-lyon.herokuapp.com](https://event-lyon.herokuapp.com) 
 
-* Ruby version
+### Remake of Event Brite (Ruby on Rails)
 
-* System dependencies
+* Day 1: Database, validates, seed, mailers, Heroku ✔️  
 
-* Configuration
+* Day 2:  
 
-* Database creation
+* Day 3:  
 
-* Database initialization
+* Day 4:  
 
-* How to run the test suite
+* Day 5:  
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
