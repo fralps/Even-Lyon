@@ -5,6 +5,8 @@ class Attendance < ApplicationRecord
 
 	#validates :stripe_customer_id, uniqueness: true
 
+	# Méthode qui appelle la méthode event_welcome_email de UserMailer,
+	# on lui passe en paramètre l'instance d'event que l'on retrouve grâce à son id.
 	def welcome_event
 		event_id = self.event_id
 		event = Event.find(event_id)

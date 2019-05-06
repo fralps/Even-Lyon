@@ -3,6 +3,8 @@ class User < ApplicationRecord
 	has_many :attendances
 	has_many :events, through: :attendances
 
+	# On crée une méthode qui appele la méthode welcome_email de UserMailer,
+	# on passe en paramètre la classe user.
 	def welcome_send
 		UserMailer.welcome_email(self).deliver_now
 	end
