@@ -1,6 +1,6 @@
 # Event Lyon
 
-Pair programmers : Carolina & François  
+Pair programmers : Carolina Ferreira & François Loupias
 
 **Production version** [https://event-lyon.herokuapp.com](https://event-lyon.herokuapp.com) 
 
@@ -8,7 +8,7 @@ Pair programmers : Carolina & François
 
 * **Day 1:** Database, validates, seed, mailers, Heroku ✔️  
 
-* **Day 2:**  
+* **Day 2:** Devise, Bootstrap, navbar, homepage, user profile, create events, event page ✔️  
 
 * **Day 3:**  
 
@@ -16,4 +16,4 @@ Pair programmers : Carolina & François
 
 * **Day 5:**  
 
-
+*Have a good day*

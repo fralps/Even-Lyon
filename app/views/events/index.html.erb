@@ -1,8 +1,8 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron text-center">
+<div class="jumbotron text-center" style="background-image: url(https://images.unsplash.com/photo-1458891216473-4f26bb4eb40e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80); background-size: 100%;">
 	<div class="container">
-		<h1 class="display-4 text-center">Live your best life!</h1>
-		<h3>Never do nothing again</h3>
+		<h1 class="display-4 text-center text-light">Live your best life!</h1>
+		<h3 class="text-light">Never do nothing again</h3>
 		<p><%= link_to "Create your event", new_event_path, class: "btn btn-primary btn-lg mt-3 mb-0" %></p>
 	</div>
 </div>
@@ -13,7 +13,7 @@
 <div class="container border border-muted p-2 mb-4 rounded text-center col col-6">
 	<!-- Example row of columns -->
 	<div class="row">
-		<div class="col">
+		<div class="col text-light">
 			<h3><%= event.title %></h3>
 			<p><%= event.description %></p>
 			<p><%= link_to "View details", event_path(event), class: "btn btn-secondary btn-sm", role: "button" %></p>
