@@ -1,2 +1,23 @@
-<h1>Events#index</h1>
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron text-center">
+	<div class="container">
+		<h1 class="display-3 text-center">Live your best life!</h1>
+		<h3>Never do nothing again</h3>
+		<p><%= link_to "Create your event", new_event_path, class: "btn btn-primary btn-lg" %></p>
+	</div>
+</div>
 
+<% events = Event.all %>
+<% events.reverse.each do |event|%>
+
+<div class="container mb-3 text-center">
+	<!-- Example row of columns -->
+	<div class="row">
+		<div class="col">
+			<h3><%= event.title %></h3>
+			<p><%= event.description %></p>
+			<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+		</div>
+	</div>
+</div>
+<% end %>
