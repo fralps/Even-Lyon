@@ -1,35 +1,30 @@
-<p></p>
+<h3 class="text-center mt-3 mb-4">Create your event</h3> 
 
 <!-- Zone du formulaire -->
-      <%= form_tag url_for(action: 'create'), method: "post", class: "col col-6" do %>
+      <%= form_tag url_for(action: 'create'), method: "post", class: "col col-4 mx-auto" do %>
 
-      <%= label_tag 'Start date' %>
+      <b><%= label_tag 'Start date' %></b>
       <%= text_field_tag 'start_date', @event.start_date, class: "form-control" %>
-      <small id="emailHelp" class="form-text text-muted">Ex: 2019-12-02 12:00</small>
-      <br />
+      <small id="emailHelp" class="form-text text-muted mb-3">Ex: 2019-12-02 12:00</small>
+      
 
-      <%= label_tag 'Duration' %>
+      <b><%= label_tag 'Duration' %></b>
       <%= text_field_tag 'duration', @event.duration, class: "form-control", placeholder: "Minutes"  %>
-      <small id="emailHelp" class="form-text text-muted">It must be a multiple of 5</small>
-      <br />
+      <small id="emailHelp" class="form-text text-muted mb-3">It must be a multiple of 5</small>
 
-       <%= label_tag 'Title' %>
+      <b><%= label_tag 'Title' %></b>
       <%= text_field_tag 'title', @event.title, class: "form-control"  %>
-      <small id="emailHelp" class="form-text text-muted">Between 5 and 140 characters</small>
-      <br />
+      <small id="emailHelp" class="form-text text-muted mb-3">Between 5 and 140 characters</small>
 
-       <%= label_tag 'Description' %>
+      <b><%= label_tag 'Description' %></b>
       <%= text_area_tag 'description', @event.description, class: "form-control"  %>
-      <small id="emailHelp" class="form-text text-muted">Between 20 and 1000 characters</small>
-      <br />
+      <small id="emailHelp" class="form-text text-muted mb-3">Between 20 and 1000 characters</small>
 
-       <%= label_tag 'Price' %>
-      <%= text_field_tag 'price', @event.price, class: "form-control", placeholder: "€"  %>
-      <br />
+      <b><%= label_tag 'Price' %></b>
+      <%= text_field_tag 'price', @event.price, class: "form-control mb-3", placeholder: "€"  %>
 
-       <%= label_tag 'Location' %>
-      <%= text_field_tag 'location', @event.location, class: "form-control"  %>
-      <br />
+      <b><%= label_tag 'Location' %></b>
+      <%= text_field_tag 'location', @event.location, class: "form-control mb-3"  %>
 
       <%= submit_tag "Create", class: "btn btn-primary mb-3" %>
 
