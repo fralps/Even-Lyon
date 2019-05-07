@@ -11,12 +11,12 @@ class UserMailer < ApplicationMailer
 
 	end
 
-	def event_welcome_email(event)
-		admin_id = event.admin_id
-		@admin = User.find(admin_id)
+	def event_welcome_email(event, user)
+		@user = user
+		@event = event
 		@url = 'https://event-lyon.herokuapp.com/event/attendance'
 
-		mail(to: @admin.email, subject: 'Nouveau participant')
+		mail(to: @event.admin.email, subject: "#{@user.first_name} vient de s'inscrire")
 
 	end
 end
