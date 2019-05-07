@@ -1,0 +1,11 @@
+<h2 class="mt-3"><%= @event.title %></h2>
+
+<ul class="list-group list-group-flush mb-3">
+  <li class="list-group-item">Description: <%= @event.description %></li>
+  <li class="list-group-item">Participant: <%= @event.users.count %></li>
+  <li class="list-group-item">Creator: <%= @event.admin.email %></li>
+  <li class="list-group-item">Start date: <%= @event.start_date %></li>
+  <li class="list-group-item">End date: <%= @event.end_date %></li>
+  <li class="list-group-item">Location: <%= @event.location %></li>
+  <li class="list-group-item">Price: <%= @event.price %> €</li>
+</ul>

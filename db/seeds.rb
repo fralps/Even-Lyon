@@ -7,12 +7,24 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 User.destroy_all
+Event.destroy_all
 
-# ----------------On crée nos users -----------------
-# 10.times do
-# user = User.create!(first_name: Faker::Name.first_name,
-#  last_name: Faker::Name.last_name, 
-#  email: "thp@yopmail.com",
-#  description: Faker::Movie.quote, 
-#  encrypted_password: Faker::Internet.password)
-# end
+#----------------On crée nos users et nos events -----------------
+10.times do
+	user = User.create!(
+		first_name: Faker::Name.first_name,
+		last_name: Faker::Name.last_name, 
+		email: Faker::Internet.email,
+		description: Faker::Movie.quote, 
+		password: Faker::Internet.password)
+
+	event = Event.create!(
+		start_date: "2019-06-21 19:00",
+		duration: 50,
+		title: Faker::Movie.quote,
+		description: Faker::Lorem.paragraph_by_chars(55, false),
+		price: rand(1..1000),
+		location: Faker::Address.city,
+		admin: user
+		)
+end
