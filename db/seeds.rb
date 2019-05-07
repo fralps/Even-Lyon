@@ -9,10 +9,10 @@ require 'faker'
 User.destroy_all
 
 # ----------------On crée nos users -----------------
-10.times do
-user = User.create!(first_name: Faker::Name.first_name,
- last_name: Faker::Name.last_name, 
- email: "thp@yopmail.com",
- description: Faker::Movie.quote, 
- encrypted_password: Faker::Internet.password)
-end
+# 10.times do
+# user = User.create!(first_name: Faker::Name.first_name,
+#  last_name: Faker::Name.last_name, 
+#  email: "thp@yopmail.com",
+#  description: Faker::Movie.quote, 
+#  encrypted_password: Faker::Internet.password)
+# end
