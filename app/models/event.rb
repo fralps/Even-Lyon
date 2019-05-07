@@ -7,14 +7,14 @@ class Event < ApplicationRecord
 	validates :start_date, presence: true
 	validate :cannot_change_the_past
 
-	validates :duration, presence: true, numericality: {:greather_than => 0 }
+	validates :duration, presence: true
 	validate :multiple_of_5	
 
 	validates :title, presence: true, length: { in: 5..140 }
 
 	validates :description, presence: true, length: { in: 20..1000}
 
-	validates :price, presence: true, length: { in: 1..1000}
+	validates :price, presence: true, numericality: { greather_than_or_equal_to: 1, less_than_or_equal_to: 1000 }
 
 	validates :location, presence: true
 
@@ -29,7 +29,7 @@ end
 # Methode pour verifier le format de la duree de l'event,
 # impossible de creer sans que ce soit un multiple de 5.
 def multiple_of_5
-	if duration % 5 != 0
+	if duration == 0 || duration % 5 != 0
 		errors.add(:duration, "it must be a multiple of 5")
 	end
 end
