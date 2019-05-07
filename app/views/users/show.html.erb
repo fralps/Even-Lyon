@@ -1,5 +1,6 @@
 <h3>Profile</h3>
-<%= link_to "Edit", 'registrations#edit' %>
+<%= link_to "Edit account information", edit_user_registration_path %>
+<%= link_to "Edit personal information", edit_user_path %>
 
 <ul class="list-group list-group-flush mb-3">
   <li class="list-group-item">First Name: <%= @user.first_name %></li>
@@ -17,7 +18,7 @@
 		<div class="col">
 			<h3><%= event.title %></h3>
 			<p><%= event.description %></p>
-			<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+			<p><%= link_to "View details", event_path(event), class: "btn btn-secondary", role: "button" %></p>
 		</div>
 	</div>
 </div>

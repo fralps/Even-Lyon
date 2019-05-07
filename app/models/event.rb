@@ -34,4 +34,9 @@ def multiple_of_5
 	end
 end
 
+# Méthode pour calculer la end_date de l'event.
+def end_date
+	start_date + duration * 60
+end
+
 end
