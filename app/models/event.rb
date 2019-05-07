@@ -22,7 +22,7 @@ class Event < ApplicationRecord
 # impossible de creer ou modifier un event passe.
 def cannot_change_the_past
 	if start_date.present? && start_date < Date.today
-		errors.add(:start_date, "can't change a past event")
+		errors.add(:start_date, "You can't change the past")
 	end
 end
 
