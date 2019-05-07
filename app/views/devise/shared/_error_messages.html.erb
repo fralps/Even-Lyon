@@ -1,5 +1,5 @@
 <% if resource.errors.any? %>
-  <div id="error_explanation" data-dismiss="alert" class="alert alert-danger" role="alert" aria-label="Close">
+  <div id="error_explanation" class="alert alert-danger" >
     <p>
       <%= I18n.t("errors.messages.not_saved",
                  count: resource.errors.count,
