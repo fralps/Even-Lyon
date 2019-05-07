@@ -35,7 +35,7 @@
 
 <% if @event.errors.any? %>
 <div class="alert alert-danger" role="alert">
- <p>Nous n'avons pas réussi à créer le potin pour la (ou les) raison(s) suivante(s) :</p>
+ <p>The event can't be created for the reasons below:</p>
  <ul>
    <% @event.errors.full_messages.each do |message| %>
    <li><%= message %></li>
