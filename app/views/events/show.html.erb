@@ -15,4 +15,10 @@
         <p><%= link_to "Join this event", new_charge_path(id: @event.id), class: "btn btn-primary", role: "button" %></p>
         <% end %>
     <% end %>
+
+    <% if current_user %>
+        <% if @event.admin == current_user %>
+        <p><%= link_to "Your event", attendances_path(id: @event.id), class: "btn btn-primary", role: "button" %></p>
+        <% end %>
+    <% end %>
 </div>

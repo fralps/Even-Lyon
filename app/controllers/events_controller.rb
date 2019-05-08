@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
 	before_action :authenticate_user!, only: [:new, :create]
+	before_action :is_admin, only: [:edit, :update, :destroy]
 
 	def index
 	end
@@ -22,5 +23,36 @@ class EventsController < ApplicationController
 
 	def show
 		@event = Event.find(params[:id])  	
+	end
+
+	def edit
+		@event = Event.find(params[:id]) 
+	end
+
+	def update
+		@event = Event.find(params[:id])
+		
+		if @event.update(admin: current_user, start_date: params[:start_date], duration: params[:duration], title: params[:title], description: params[:description], price: params[:price], location: params[:location])
+			redirect_to event_path
+			flash[:success] = "Your event has been successfully edited"
+		else
+			render :edit
+		end	
+	end
+
+	def destroy
+		@event = Event.find(params[:id])
+		@event.destroy
+		redirect_to root_path
+	end
+
+	def is_admin
+		@event = Event.find(params[:id])
+
+		if current_user != @event.admin
+			flash[:alert] = "Access denied"
+			redirect_to event_path
+		end
+
 	end
 end
