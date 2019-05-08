@@ -29,9 +29,12 @@ end
 # Methode pour verifier le format de la duree de l'event,
 # impossible de creer sans que ce soit un multiple de 5.
 def multiple_of_5
-	if duration == 0 || duration % 5 != 0
+	if duration == nil 
+		duration = 5
+	else duration == 0 || duration % 5 != 0
 		errors.add(:duration, "it must be a multiple of 5")
 	end
+
 end
 
 # Méthode pour calculer la end_date de l'event.
