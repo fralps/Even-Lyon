@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :events
   resources :charges
   resources :attendances
+
+  post 'create_attendance' => 'attendances#create', as: :create_attendance
 end

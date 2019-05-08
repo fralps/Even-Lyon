@@ -3,8 +3,6 @@ class Attendance < ApplicationRecord
 	belongs_to :user
 	belongs_to :event
 
-	#validates :stripe_customer_id, uniqueness: true
-
 	# Méthode qui appelle la méthode event_welcome_email de UserMailer,
 	# on lui passe en paramètre l'instance d'event que l'on retrouve grâce à son id.
 	def welcome_event
