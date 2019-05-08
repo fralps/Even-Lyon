@@ -42,4 +42,13 @@ def end_date
 	start_date + duration * 60
 end
 
+def is_coming?(user)
+
+	if self.attendances.where(user_id: user.id).count > 0
+		return true
+	else
+		return false
+	end
+end
+
 end

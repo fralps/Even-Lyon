@@ -10,4 +10,9 @@
 		<li class="list-group-item">Location: <%= @event.location %></li>
 		<li class="list-group-item">Price: <%= @event.price %> €</li>
 	</ul>
+	<% if current_user %>
+        <% unless @event.admin == current_user || @event.is_coming?(current_user) %>
+        <p><%= link_to "Join this event", new_charge_path(id: @event.id), class: "btn btn-primary", role: "button" %></p>
+        <% end %>
+    <% end %>
 </div>
