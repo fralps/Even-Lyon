@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
+	has_one_attached :picture
 	has_many :attendances
 	has_many :users, through: :attendances
 	belongs_to :admin, class_name: "User"
@@ -17,6 +18,7 @@ class Event < ApplicationRecord
 	validates :price, presence: true, numericality: { greather_than_or_equal_to: 0, less_than_or_equal_to: 1000 }
 
 	validates :location, presence: true
+	validate :has_picture
 
 # Methode pour verifier la startdate de l'event,
 # impossible de creer ou modifier un event passe.
@@ -50,4 +52,9 @@ def is_coming?(user)
 	end
 end
 
+def has_picture
+	if self.picture.attached? == false
+		errors.add(:picture, "You must upload a picture")
+	end
+end
 end

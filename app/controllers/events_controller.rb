@@ -12,9 +12,11 @@ class EventsController < ApplicationController
 	def create
 		@event = Event.new(admin: current_user, start_date: params[:start_date], duration: params[:duration], title: params[:title], description: params[:description], price: params[:price], location: params[:location])
 		@event.save
+		@event.picture.attach(params[:picture])
+
 
 		if @event.save
-			redirect_to root_path
+			redirect_to event_path(@event)
 			flash[:success] = "Your event has been successfully created"
 		else
 			render 'new'
@@ -55,4 +57,13 @@ class EventsController < ApplicationController
 		end
 
 	end
+
+	def has_picture
+	if Event.picture.attached?
+		return true
+	else
+		render 'new'
+		flash[:alert] = "You must upload a picture"
+	end
+end
 end
