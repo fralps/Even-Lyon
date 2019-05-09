@@ -11,13 +11,15 @@ Event.destroy_all
 
 #----------------On crée nos users et nos events -----------------
 10.times do
-	user = User.create!(
+	@user = User.create!(
 		first_name: Faker::Name.first_name,
 		last_name: Faker::Name.last_name, 
 		email: Faker::Internet.email,
 		description: Faker::Movie.quote, 
 		password: Faker::Internet.password
-	)
+	)	
+
+	@user.avatar.attach(io: File.open('app/assets/images/event.jpg'), filename: 'event.jpg')
 
 	@event = Event.new(
 		start_date: "2019-06-21 19:00",
@@ -26,7 +28,7 @@ Event.destroy_all
 		description: Faker::Lorem.paragraph_by_chars(55, false),
 		price: rand(1..1000),
 		location: Faker::Address.city,
-		admin: user
+		admin: @user
 	)
 	
 	@event.picture.attach(io: File.open('app/assets/images/event.jpg'), filename: 'event.jpg')
