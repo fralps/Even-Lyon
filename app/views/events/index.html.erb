@@ -14,14 +14,14 @@
 
 
  <% events = Event.all %>
- <% events.reverse.each do |event|%>
+ <% events.each do |event|%>
 
  <section>
  	<div class="container border border-muted rounded mb-4">
  		<div class="row align-items-center">
  			<div class="col-lg-6 order-lg-2">
  				<div class="p-5">
- 					<%= image_tag event.picture, alt: 'picture', class: "img-fluid rounded-circle" %>
+ 					<%= image_tag event.picture, alt: 'picture', size: "700x700", class: "img-fluid rounded-circle" %>
  				</div>
  			</div>
  			<div class="col-lg-6 order-lg-1">
