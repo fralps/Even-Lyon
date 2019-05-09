@@ -1,23 +1,37 @@
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron text-center" style="background-image: url(https://images.unsplash.com/photo-1458891216473-4f26bb4eb40e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80); background-size: 100%;">
-	<div class="container">
-		<h1 class="display-4 text-center text-light">Live your best life!</h1>
-		<h3 class="text-light">Never do nothing again</h3>
-		<p><%= link_to "Create your event", new_event_path, class: "btn btn-primary btn-lg mt-3 mb-0" %></p>
-	</div>
-</div>
+ <header class="masthead text-center text-white mb-5">
+ 	<div class="masthead-content">
+ 		<div class="container">
+ 			<h1 class="masthead-heading mb-0">Live your best life!</h1>
+ 			<h2 class="masthead-subheading mb-0">Never do nothing again</h2>
+ 			<p><%= link_to "Create your event", new_event_path, class: "btn btn-primary btn-lg mt-3 mb-0" %></p>
+ 		</div>
+ 	</div>
+ 	<div class="bg-circle-1 bg-circle"></div>
+ 	<div class="bg-circle-2 bg-circle"></div>
+ 	<div class="bg-circle-3 bg-circle"></div>
+ 	<div class="bg-circle-4 bg-circle"></div>
+ </header>
 
-<% events = Event.all %>
-<% events.reverse.each do |event|%>
 
-<div class="container border border-muted p-2 mb-4 rounded text-center col col-6">
-	<!-- Example row of columns -->
-	<div class="row">
-		<div class="col text-light">
-			<h3><%= event.title %></h3>
-			<p><%= event.description %></p>
-			<p><%= link_to "View details", event_path(event), class: "btn btn-secondary btn-sm", role: "button" %></p>
-		</div>
-	</div>
-</div>
+ <% events = Event.all %>
+ <% events.reverse.each do |event|%>
+
+ <section>
+ 	<div class="container border border-muted rounded mb-4">
+ 		<div class="row align-items-center">
+ 			<div class="col-lg-6 order-lg-2">
+ 				<div class="p-5">
+ 					<%= image_tag event.picture, alt: 'picture', class: "img-fluid rounded-circle" %>
+ 				</div>
+ 			</div>
+ 			<div class="col-lg-6 order-lg-1">
+ 				<div class="p-5">
+ 					<h2 class="display-4"><%= event.title %></h2>
+ 					<p><%= event.description %></p>
+ 					<p><%= link_to "View details", event_path(event), class: "btn btn-secondary btn-sm", role: "button" %></p>
+ 				</div>
+ 			</div>
+ 		</div>
+ 	</div>
+ </section>
 <% end %>

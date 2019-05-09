@@ -12,6 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap/css/bootstrap.min
+ *= require one-page-wonder.min
  */
 
 html {
