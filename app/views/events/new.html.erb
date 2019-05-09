@@ -5,8 +5,8 @@
   <%= form_tag events_path, multipart: true, class: "col col-4 mx-auto" do %>
 
   <b><%= label_tag 'Start date' %></b>
-  <%= text_field_tag 'start_date', @event.start_date, class: "form-control" %>
-  <small id="emailHelp" class="form-text text-muted mb-3">Ex: 2019-12-02 12:00</small>
+  <%= text_field_tag 'start_date', @event.start_date, class: "form-control datetimepicker-input" %>
+  <small id="emailHelp" class="form-text text-muted datetimepicker-input mb-3">Ex: 2019-12-02 12:00</small>
 
 
   <b><%= label_tag 'Duration' %></b>

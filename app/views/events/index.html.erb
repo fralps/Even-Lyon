@@ -16,22 +16,20 @@
  <% events = Event.all %>
  <% events.reverse.each do |event|%>
 
- <section>
- 	<div class="container border border-muted rounded mb-4">
- 		<div class="row align-items-center">
- 			<div class="col-lg-6 order-lg-2">
- 				<div class="p-5">
- 					<%= image_tag event.picture, style: 'height: auto;', alt: 'picture', class: "img-thumbnail img-fluid"%>
- 				</div>
- 			</div>
- 			<div class="col-lg-6 order-lg-1">
- 				<div class="p-5">
- 					<h2 class="display-4"><%= event.title %></h2>
- 					<p><%= event.description %></p>
- 					<p><%= link_to "View details", event_path(event), class: "btn btn-secondary btn-sm", role: "button" %></p>
- 				</div>
- 			</div>
- 		</div>
- 	</div>
- </section>
+<section>
+ <div class="row">
+  <div class="col col-6 mx-auto mb-4">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title"><%= event.title %></h2>
+        <%= image_tag event.picture, style: 'height: auto;', alt: 'picture', class: "img-thumbnail mb-3 img-fluid"%>
+        <p class="card-text"><%= event.description %></p>
+        <p><%= link_to "View details", event_path(event), class: "btn btn-secondary btn-sm", role: "button" %></p>
+      </div>
+    </div>
+  </div>
+ </div>
+</section>
+
+
 <% end %>
