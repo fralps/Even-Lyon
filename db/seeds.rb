@@ -16,9 +16,10 @@ Event.destroy_all
 		last_name: Faker::Name.last_name, 
 		email: Faker::Internet.email,
 		description: Faker::Movie.quote, 
-		password: Faker::Internet.password)
+		password: Faker::Internet.password
+	)
 
-	event = Event.create!(
+	@event = Event.new(
 		start_date: "2019-06-21 19:00",
 		duration: 50,
 		title: Faker::Movie.quote,
@@ -26,5 +27,10 @@ Event.destroy_all
 		price: rand(1..1000),
 		location: Faker::Address.city,
 		admin: user
-		)
+	)
+	
+	@event.picture.attach(io: File.open('app/assets/images/event.jpg'), filename: 'event.jpg')
+	
+	@event.save
+
 end
