@@ -2,6 +2,7 @@ class EventsController < ApplicationController
 	before_action :authenticate_user!, only: [:new, :create]
 	before_action :is_admin, only: [:edit, :update, :destroy]
 
+
 	def index
 	end
 

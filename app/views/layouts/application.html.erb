@@ -65,6 +65,14 @@
         </div>
         <% end %>
       </li>
+        <% if user_signed_in? %>
+        <% if current_user.is_god == true %>
+         <li class="nav-item">
+          <%= link_to "Dashboard", gods_index_path, class: "nav-item nav-link ml-3" %>
+        </li>
+        <%end%>
+        <%end%>
+
     </ul>
   </div>
 </nav>

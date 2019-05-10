@@ -14,7 +14,9 @@
 
 
  <% events = Event.all %>
+ 
  <% events.reverse.each do |event|%>
+<% if event.validated == true %>
 
 <section>
  <div class="row">
@@ -31,5 +33,5 @@
  </div>
 </section>
 
-
+<% end %>
 <% end %>
