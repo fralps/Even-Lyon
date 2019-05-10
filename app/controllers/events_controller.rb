@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
 	before_action :authenticate_user!, only: [:new, :create]
 	before_action :is_admin, only: [:edit, :update, :destroy]
+	before_action :is_validated, only: [:show]
 
 
 	def index
@@ -65,6 +66,14 @@ class EventsController < ApplicationController
 	else
 		render 'new'
 		flash[:alert] = "You must upload a picture"
+	end
+end
+
+def is_validated
+	@event = Event.find(params[:id])
+	if @event.validated != true
+		redirect_to root_path
+		flash[:alert] = "Access denied"
 	end
 end
 end
