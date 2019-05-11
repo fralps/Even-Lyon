@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
+
 	has_one_attached :picture
 	has_many :attendances
 	has_many :users, through: :attendances
@@ -57,4 +58,6 @@ def has_picture
 		errors.add(:picture, "You must upload a picture")
 	end
 end
+
+
 end
